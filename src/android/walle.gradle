@@ -1,0 +1,10 @@
+// cordova 默认只把 libs/*.jar 纳入依赖，aar 需通过 flatDir 显式引入
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation(name: 'library-1.1.6', ext: 'aar')
+}

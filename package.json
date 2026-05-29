@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-walle-channel",
+  "version": "1.0.0",
+  "description": "Read Android dist channel from the Walle V2 signature block",
+  "cordova": {
+    "id": "cordova-plugin-walle-channel",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=9.0.0"
+    }
+  ],
+  "license": "MIT"
+}

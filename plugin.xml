@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-walle-channel"
+        version="1.0.0">
+
+  <name>WalleChannel</name>
+  <description>Read Android dist channel from the Walle V2 signature block</description>
+  <license>MIT</license>
+
+  <js-module src="www/walleChannel.js" name="walleChannel">
+    <clobbers target="cordova.plugins.walleChannel" />
+  </js-module>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="WalleChannel">
+        <param name="android-package" value="com.baicao.walle.WalleChannelPlugin" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/WalleChannelPlugin.java"
+                 target-dir="src/com/baicao/walle" />
+
+    <lib-file src="src/android/library-1.1.6.aar" />
+    <framework src="src/android/walle.gradle" custom="true" type="gradleReference" />
+  </platform>
+</plugin>
