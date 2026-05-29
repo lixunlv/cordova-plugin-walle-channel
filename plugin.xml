@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cordova-plugin-walle-channel"
-        version="1.0.0">
+        version="1.0.1">
 
   <name>WalleChannel</name>
   <description>Read Android dist channel from the Walle V2 signature block</description>
@@ -21,7 +21,6 @@
     <source-file src="src/android/WalleChannelPlugin.java"
                  target-dir="src/com/baicao/walle" />
 
-    <lib-file src="src/android/library-1.1.6.aar" />
-    <framework src="src/android/walle.gradle" custom="true" type="gradleReference" />
+    <lib-file src="src/android/walle-reader.jar" />
   </platform>
 </plugin>

@@ -29,9 +29,9 @@ cordova.plugins.walleChannel.getChannel(
 ## 实现说明
 
 - 原生侧调用 `com.meituan.android.walle.WalleChannelReader.getChannel(context)`。
-- 依赖的 `library-1.1.6.aar` 为 Walle 官方读取库（Apache 2.0），随插件附带（jcenter 已关停、Maven Central 无官方包，故内置 aar）。
-- cordova 默认 `fileTree(dir:'libs', include:'*.jar')` 不收 aar，故通过 `src/android/walle.gradle`（`flatDir` + `implementation(name:'library-1.1.6', ext:'aar')`）显式引入。
+- 依赖的 `walle-reader.jar`（Apache 2.0）随插件附带，包含 `WalleChannelReader`（android 读取入口）+ `ChannelReader`/`ApkUtil`/`PayloadReader`/`ChannelInfo`/`SignatureNotFoundException` 等底层读取类。jcenter 已关停、Maven Central 无官方包，故内置该 jar。
+- 用 jar 而非 aar：cordova 默认 `fileTree(dir:'libs', include:'*.jar')` 即可收入，无需额外 gradle 配置。
 
 ## License
 
-MIT（插件代码）；内置 aar 遵循 Apache 2.0。
+MIT（插件代码）；内置 walle 类遵循 Apache 2.0。
